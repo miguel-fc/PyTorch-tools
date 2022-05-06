@@ -18,7 +18,7 @@ class LAutoencoder(nn.Module):
         
         ### Convolutional section
         self.encoder = nn.Sequential(
-            nn.Linear(28 * 28, 128),
+            nn.Linear(fc2_input_dim * fc2_input_dim, 128),
             nn.ReLU(True),
             nn.Linear(128, 64),
             nn.ReLU(True), 
@@ -32,7 +32,7 @@ class LAutoencoder(nn.Module):
             nn.ReLU(True),
             nn.Linear(64, 128),
             nn.ReLU(True), 
-            nn.Linear(128, 28 * 28),
+            nn.Linear(128, fc2_input_dim * fc2_input_dim),
             nn.Sigmoid() )
         
     def forward(self, x):
