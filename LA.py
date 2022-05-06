@@ -63,7 +63,7 @@ class LAutoencoder(nn.Module):
             train_loss.append(loss.detach().cpu().numpy())
         return np.mean(train_loss)
 
-    s### Testing function
+    ### Testing function
     def test_epoch(model, device, dataloader, loss_fn):
         # Set evaluation mode for encoder and decoder
         model.eval()
