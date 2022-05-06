@@ -13,7 +13,7 @@ import torch.optim as optim
 
 class LAutoencoder(nn.Module):
     
-    def __init__(self,encoded_space_dim,fc2_fc2_input_dim:
+    def __init__(self,encoded_space_dim,fc2_input_dim):
         super().__init__()
         
         ### Convolutional section
