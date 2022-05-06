@@ -41,7 +41,7 @@ class LAutoencoder(nn.Module):
             return x,latent
 
     ### Training function
-    def train_epoch(model, device, dataloader, loss_fn, optimizer):
+    def train_epoch(self,model, device, dataloader, loss_fn, optimizer):
         # Set train mode for both the encoder and the decoder
         model.train()
         # decoder.train()
@@ -64,7 +64,7 @@ class LAutoencoder(nn.Module):
         return np.mean(train_loss)
 
     ### Testing function
-    def test_epoch(model, device, dataloader, loss_fn):
+    def test_epoch(self, model, device, dataloader, loss_fn):
         # Set evaluation mode for encoder and decoder
         model.eval()
         # decoder.eval()
