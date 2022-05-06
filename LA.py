@@ -13,12 +13,12 @@ import torch.optim as optim
 
 class LAutoencoder(nn.Module):
     
-    def __init__(self,encoded_space_dim,fc2_input_dim):
+    def __init__(self,encoded_space_dim,input_dim):
         super().__init__()
         
         ### Convolutional section
         self.encoder = nn.Sequential(
-            nn.Linear(28 * 28, 128),
+            nn.Linear(input_dim * input_dim, 128),
             nn.ReLU(True),
             nn.Linear(128, 64),
             nn.ReLU(True), 
@@ -32,7 +32,7 @@ class LAutoencoder(nn.Module):
             nn.ReLU(True),
             nn.Linear(64, 128),
             nn.ReLU(True), 
-            nn.Linear(128, 28 * 28),
+            nn.Linear(128, input_dim * input_dim),
             nn.Sigmoid() )
         
     def forward(self, x):
