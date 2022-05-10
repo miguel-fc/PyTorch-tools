@@ -95,7 +95,7 @@ def train_epoch(encoder, decoder, device, dataloader, loss_fn, optimizer):
         loss.backward()
         optimizer.step()
         # Print batch loss
-        print('\t partial train loss (single batch): %f' % (loss.data))
+        # print('\t partial train loss (single batch): %f' % (loss.data))
         train_loss.append(loss.detach().cpu().numpy())
 
     return np.mean(train_loss)
