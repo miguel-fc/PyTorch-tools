@@ -120,8 +120,9 @@ def test_epoch(encoder, decoder, device, dataloader, loss_fn):
             conc_out.append(decoded_data.cpu())
             conc_label.append(image_batch.cpu())
         # Create a single tensor with all the values in the lists
-     
+        conc_out = torch.cat(conc_out)
         conc_label = torch.cat(conc_label) 
         # Evaluate global loss
         val_loss = loss_fn(conc_out, conc_label)
     return val_loss.data
+
