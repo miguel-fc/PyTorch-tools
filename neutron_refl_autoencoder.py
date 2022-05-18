@@ -17,7 +17,9 @@ class LAutoencoder(nn.Module):
         super().__init__()
         
         self.encoder = nn.Sequential(
-            nn.Linear(dim1 * dim2, 128),
+            nn.Linear(dim1 * dim2, 512),
+            nn.ReLU(True),
+            nn.Linear(512, 128),
             nn.ReLU(True),
             nn.Linear(128, 64),
             nn.ReLU(True), 
@@ -31,7 +33,9 @@ class LAutoencoder(nn.Module):
             nn.ReLU(True),
             nn.Linear(64, 128),
             nn.ReLU(True), 
-            nn.Linear(128, dim1 * dim2),
+            nn.Linear(128, 512),
+            nn.ReLU(True), 
+            nn.Linear(512, dim1 * dim2),
             nn.Sigmoid() )
         
     def forward(self, x):
