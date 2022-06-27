@@ -31,8 +31,8 @@ from tqdm import tqdm
 
 #Downloand numpy arrays for neutron reflectivity curves and parameters used to generate 
 #them
-!gdown "https://drive.google.com/uc?id=1--SS7PoObNsKwwN8Hg__ZBRvPCqqEBpA"
-!gdown "https://drive.google.com/uc?id=1SmWTmLlvg-cEyzXIlt8ik286pQ4nE86G"
+gdown "https://drive.google.com/uc?id=1--SS7PoObNsKwwN8Hg__ZBRvPCqqEBpA"
+gdown "https://drive.google.com/uc?id=1SmWTmLlvg-cEyzXIlt8ik286pQ4nE86G"
 
 #Stored those numpy arrays
 sld_arr = np.load('sld_fp34.npy')
